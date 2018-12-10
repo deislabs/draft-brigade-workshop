@@ -23,7 +23,7 @@ $ helm install -n brigade ./charts/brigade --set rbac.enabled=true --set gw.enab
 Now it's time to use `brig`, the CLI for Brigade, to create a new project. By default, a new Brigade project will use a VCS sidecar that clones the project git repository so that the Brigade worker (the container that executes the JavaScript pipeline) has your project locally. But because in this case we are not pushing to git, we will want to use a different sidecar, one that only copies the `brigade.js` file in the Brigade workspace (and then will use the newly built image to test everything.)
 
 
-TODO: skip adding a sidecar altogether since we supply the `brigade.js` file with `brig run`
+> Note that we could skip adding a sidecar altogether since we supply the `brigade.js` file with `brig run` - however, because of a known bug in Brigade, that is currently unavailable, so we can bypass that by using an `alpine` container for it, wihch, in this case, is the equivalent of not using one.
 
 
 ```
@@ -35,7 +35,7 @@ $ brig project create
 Auto-generated a Shared Secret: "Cmwbe42gh1P3gD9ShFB3ANM9"
 ? Configure GitHub Access? No
 ? Configure advanced options Yes
-? Custom VCS sidecar node-demo:edge
+? Custom VCS sidecar alpine
 ? Build storage size 
 ? Build storage class 
 ? Job cache storage class 
@@ -53,6 +53,10 @@ Auto-generated a Shared Secret: "Cmwbe42gh1P3gD9ShFB3ANM9"
 Project ID: brigade-646bf4e98239dcddf6f67ba3df7a407bba9018c66e71a369ad62ef
 ```
 
+Then, we will use [this application][app] to go through working with Draft and Brigade to create a development workflow.
+
 
 [brigade-overview]: https://azure.github.io/brigade/intro/overview.html
 [quick-install]: https://azure.github.io/brigade/intro/install.html
+
+[app]: https://github.com/radu-matei/node-demo
