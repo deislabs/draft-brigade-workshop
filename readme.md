@@ -3,7 +3,7 @@
 
 ## Agenda
 
-1. [Getting started with Draft](content/01-draft.md)
-2. [Develop frontend and backend apps with Draft](content/02-frontend-backend.md)
-3. [Inner loop development with Brigade](https://github.com/radu-matei/node-demo)
-4. [Remote debugging using the VS Code Kubernetes extension](https://github.com/radu-matei/vscode-draft-remote-debug-samples)
+1. [Getting started with Brigade](content/01-brigade-getting-started.md)
+2. [Deploying Brigade jobs using Virtual Kubelet](https://cloudblogs.microsoft.com/opensource/2019/04/01/brigade-kubernetes-serverless-tutorial/)
+3. [Getting started with Draft](content/03-draft.md)
+4. [Develop frontend and backend apps with Draft](content/04-frontend-backend.md)
