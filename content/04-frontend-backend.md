@@ -104,7 +104,7 @@ Now if you browse to [`http://localhost:8080/todos`](http://localhost:8080/todos
 
 ### Exploring the Angular front-end
 
-Now if we navigate to the `angular-frontend` folder and execute `npm install` and `npm start`:
+Now if we navigate to the `angular-frontend` folder, first update the `apiUrl` value in `environment.ts` to point to `localhost:8080` when executing locally, then execute `npm install` and `npm start`:
 
 ```shell
 $ npm install
@@ -168,7 +168,6 @@ Connect to node-debug:9229 on localhost:9229
 ```
 
 This command executed the `draft up` cycle again (build and push the container image, then update the application in your Kubernetes cluster), then exposed the application ports locally - now simply refresh your application page and you should see the changes.
-
 
 # Your task
 
